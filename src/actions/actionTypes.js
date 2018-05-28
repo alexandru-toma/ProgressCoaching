@@ -1,0 +1,8 @@
+export const GET_ALL_BLOGS = 'GET_ALL_BLOGS'
+export const GET_TOP_BLOGS = 'GET_TOP_BLOGS'
+export const ADD_NEW_BLOG = 'ADD_NEW_BLOG'
+export const EDIT_BLOG = 'EDIT_BLOG'
+export const VOTE_UP_BLOG = 'VOTE_UP_BLOG'
+export const VOTE_DOWN_BLOG = 'VOTE_DOWN_BLOG'
+export const DELETE_BLOG = 'DELETE_BLOG'
+export const DELETE_ALL_BLOGS = 'DELETE_ALL_BLOGS'

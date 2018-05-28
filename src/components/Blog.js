@@ -1,9 +1,44 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { startGetAllBlogs } from '../actions/blogs'
+import ListBlog from './ListBlog'
 
-const Blog = () => (
-    <div>
-        <h4>Blog</h4>
-    </div>
-);
+class Blog extends Component {
+    componentDidMount() {
+        this.props.startGetAllBlogs()
+    }
 
-export default Blog
+    render() {
+        const { blogs } = this.props
+        return (
+            <div>
+                <ul>
+                    {this.props.blogs.map(blog =>
+                        ((blog.deleted === false) ?
+                            (<ListBlog title={blog.title}
+                                        key={blog.id}
+                                        author={blog.author}
+                                        date={blog.date}
+                                        summary={blog.summary}/>) : ''))}
+                </ul>
+            </div>
+        )
+    }
+}
+
+function mapStateToProps(state) {
+    return {
+        blogs: state.blogReducer
+    }
+}
+
+function mapDispatchToProps(dispatch) {
+    return {
+        startGetAllBlogs: () => dispatch(startGetAllBlogs())
+    }
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Blog)

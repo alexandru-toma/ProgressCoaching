@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { NavLink, Link } from 'react-router-dom'
-import { Input, Menu, Segment, Dropdown } from 'semantic-ui-react'
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+import { Menu, Dropdown } from 'semantic-ui-react'
 
 const Header = () => (
     <Menu>
@@ -26,6 +26,13 @@ const Header = () => (
                 </Dropdown.Item>
                 <Dropdown.Item as={NavLink} to='/aboutus' exact={true}>
                     About Us
+                </Dropdown.Item>
+            </Dropdown.Menu>
+        </Dropdown>
+        <Dropdown text='Admin' pointing className='link item'>
+            <Dropdown.Menu>
+                <Dropdown.Item as={NavLink} to='/blogmanagement' exact={true}>
+                    Blog Management
                 </Dropdown.Item>
             </Dropdown.Menu>
         </Dropdown>

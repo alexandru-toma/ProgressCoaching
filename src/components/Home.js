@@ -1,4 +1,5 @@
 import React from 'react'
+import  '../firebase/firebase'
 
 const Home = () => {
     return(
